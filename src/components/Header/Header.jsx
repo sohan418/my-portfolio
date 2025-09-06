@@ -22,7 +22,6 @@ const Header = ({ activeSection, setActiveSection }) => {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
-    { id: 'ai-tools', label: 'AI Tools' },
     { id: 'projects', label: 'Projects' },
     { id: 'experience', label: 'Experience' },
     { id: 'resume', label: 'Resume' },
