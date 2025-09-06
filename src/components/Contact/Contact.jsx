@@ -58,29 +58,24 @@ const Contact = forwardRef((props, ref) => {
   const socialLinks = [
     { 
       icon: <FaGithub size={20} />, 
-      url: 'https://github.com/yourusername', 
+      url: 'https://github.com/sohan418', 
       label: 'GitHub',
       color: '#333'
     },
     { 
       icon: <FaLinkedin size={20} />, 
-      url: 'https://linkedin.com/in/yourusername', 
+      url: 'https://www.linkedin.com/in/sohan-singh-bisht-bb5788279', 
       label: 'LinkedIn',
       color: '#0077b5'
     },
     { 
-      icon: <FaTwitter size={20} />, 
-      url: 'https://twitter.com/yourusername', 
-      label: 'Twitter',
-      color: '#1DA1F2'
-    },
-    { 
       icon: <FaEnvelope size={20} />, 
-      url: 'mailto:your.email@example.com', 
+      url: 'mailto:sohanbisht418@gmail.com', 
       label: 'Email',
       color: '#D44638'
     }
   ];
+
 
   return (
     <section id={props.id} ref={ref} className="contact-section">
@@ -100,7 +95,7 @@ const Contact = forwardRef((props, ref) => {
                 </div>
                 <div>
                   <h4>Location</h4>
-                  <p>New Delhi, India</p>
+                  <p>Almora, Uttarakhand, India</p>
                 </div>
               </div>
               
@@ -110,7 +105,7 @@ const Contact = forwardRef((props, ref) => {
                 </div>
                 <div>
                   <h4>Email</h4>
-                  <a href="mailto:sohan.singh@example.com">sohan.singh@example.com</a>
+                  <a href="mailto:sohanbisht418@gmail.com">sohanbisht418@gmail.com</a>
                 </div>
               </div>
               
@@ -120,7 +115,7 @@ const Contact = forwardRef((props, ref) => {
                 </div>
                 <div>
                   <h4>Phone</h4>
-                  <a href="tel:+911234567890">+91 12345 67890</a>
+                  <a href="tel:+919761408644">(+91) 9761408644</a>
                 </div>
               </div>
             </div>
