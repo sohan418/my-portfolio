@@ -24,26 +24,56 @@ const Contact = forwardRef((props, ref) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Here you would typically send the form data to a server
-    console.log('Form submitted:', formData);
-    
-    // Simulate form submission
-    setFormStatus({
-      submitted: true,
-      success: true,
-      message: 'Thank you for your message! I will get back to you soon.'
-    });
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      setFormStatus({
+        submitted: true,
+        success: false,
+        message: 'Please fill in all required fields.'
+      });
+      return;
+    }
+
+    try {
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://portfolio-backend-6xzp.onrender.com';
+      const response = await fetch(`${API_BASE_URL}/submit`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setFormStatus({
+          submitted: true,
+          success: true,
+          message: result.message || 'Thank you for your message! I will get back to you soon.'
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        throw new Error(result.message || 'Form submission failed');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setFormStatus({
+        submitted: true,
+        success: false,
+        message: 'Sorry, there was an error sending your message. Please try again.'
+      });
+    }
     
     // Reset status after 5 seconds
     setTimeout(() => {
