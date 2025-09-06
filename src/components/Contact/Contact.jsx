@@ -38,7 +38,7 @@ const Contact = forwardRef((props, ref) => {
     }
 
     try {
-      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://portfolio-backend-6xzp.onrender.com';
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
       const response = await fetch(`${API_BASE_URL}/submit`, {
         method: 'POST',
         headers: {
