@@ -8,6 +8,7 @@ import Resume from './components/Resume/Resume';
 import Contact from './components/Contact/Contact';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import './App.css';
+import { Sun, Moon } from "lucide-react";
 
 const AppContent = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -15,7 +16,7 @@ const AppContent = () => {
 
   return (
     <div className="app">
-      <Header 
+      <Header
         activeSection={activeSection}
         setActiveSection={setActiveSection}
       />
@@ -25,7 +26,7 @@ const AppContent = () => {
             <div className="hero-content">
               <h1>Sohan Singh Bisht</h1>
               <p className="tagline">
-                <span className="highlight">Software Developer</span> | <span className="highlight">AI Engineer</span>
+                <span className="highlight">Software Developer</span>
               </p>
               <p className="intro">
                 I build exceptional digital experiences with modern technologies and AI solutions.
@@ -44,19 +45,28 @@ const AppContent = () => {
                 <FaCode className="code-icon" />
               </div>
             </div>
-            <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
-              {theme === 'light' ? '🌙' : '☀️'}
+            <button
+              className="theme-toggle"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+            >
+              {theme === "light" ? (
+                <Moon size={22} className="text-gray-800" />
+              ) : (
+                <Sun size={22} className="text-yellow-400" />
+              )}
             </button>
+
           </div>
         </section>
-        
+
         <About id="about" />
         <Projects id="projects" />
         <Experience id="experience" />
         <Resume id="resume" />
         <Contact id="contact" />
       </main>
-      
+
       <footer className="footer">
         <div className="container">
           <p> {new Date().getFullYear()} Sohan Singh Bisht. All rights reserved.</p>
