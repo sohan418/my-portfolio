@@ -1,31 +1,67 @@
 import { forwardRef } from 'react';
-import { FaDownload, FaFilePdf, FaServer, FaFileCode, FaRobot, FaTools } from 'react-icons/fa';
+import { FaDownload, FaFilePdf, FaTools, FaCode, FaDatabase, FaCloud, FaAward, FaCertificate } from 'react-icons/fa';
 import './Resume.css';
 
 const Resume = forwardRef((props, ref) => {
   // Replace with your actual resume file path in the public folder
   const resumePdf = "/resume.pdf";
   
-  const skills = [
+  const skills =[
     {
-      category: 'Frontend',
-      icon: <FaFileCode />,
-      items: ['React', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Redux']
+      category: 'Programming',
+      icon: <FaCode />,
+      items: ['Python', 'JavaScript', 'HTML', 'CSS']
     },
     {
-      category: 'Backend',
-      icon: <FaServer />,
-      items: ['Node.js', 'Python', 'Express', 'Django', 'RESTful APIs', 'GraphQL']
+      category: 'Frameworks & Libraries',
+      icon: <FaCode />,
+      items: ['Flask','Fast API', 'React.js', 'NumPy', 'Pandas', 'Matplotlib']
     },
     {
-      category: 'AI/ML',
-      icon: <FaRobot />,
-      items: ['TensorFlow', 'PyTorch', 'NLP', 'Computer Vision', 'Scikit-learn']
+      category: 'Databases',
+      icon: <FaDatabase />,
+      items: ['MongoDB', 'MySQL']
     },
     {
-      category: 'Tools & Others',
+      category: 'Cloud Services',
+      icon: <FaCloud />,
+      items: ['AWS (Amazon Bedrock, S3, SQS, Lambda, Transcribe)',
+        'Azure (Speech-to-Text, Text-to-Speech, Blob Storage)'
+
+      ]
+    },
+    {
+      category: 'Development Tools',
       icon: <FaTools />,
-      items: ['Git', 'Docker', 'AWS', 'MongoDB', 'PostgreSQL', 'CI/CD']
+      items: ['Git', 'GitHub', 'VS Code']
+    }
+  ];;
+
+  const certifications = [
+    {
+      title: 'Full Stack Development with Python Flask',
+      issuer: 'Actecal Pvt. Ltd',
+      date: 'July 2022',
+      icon: <FaCertificate />
+    },
+    {
+      title: 'MongoDB Python Developer Path',
+      issuer: 'MongoDB University',
+      date: 'September 2024',
+      icon: <FaCertificate />
+    },
+    {
+      title: 'Amazon Bedrock Getting Started',
+      issuer: 'AWS Training',
+      date: 'August 2024',
+      icon: <FaCertificate />
+    },
+    {
+      title: 'Employee of the Quarter',
+      issuer: 'Valuenable Pvt. Ltd',
+      date: '2024',
+      icon: <FaAward />,
+      description: 'Honored by client for outstanding contribution and performance'
     }
   ];
 
@@ -80,6 +116,28 @@ const Resume = forwardRef((props, ref) => {
                       </li>
                     ))}
                   </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Certifications Section */}
+          <div className="certifications-container">
+            <h3><FaAward /> Certifications & Awards</h3>
+            <div className="certifications-grid">
+              {certifications.map((cert, index) => (
+                <div key={index} className="certification-card">
+                  <div className="certification-icon">
+                    {cert.icon}
+                  </div>
+                  <div className="certification-details">
+                    <h4>{cert.title}</h4>
+                    <p className="cert-issuer">{cert.issuer}</p>
+                    <p className="cert-date">{cert.date}</p>
+                    {cert.description && (
+                      <p className="cert-description">{cert.description}</p>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>

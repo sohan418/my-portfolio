@@ -28,11 +28,11 @@ const Projects = forwardRef((props, ref) => {
     },
     {
       id: 3,
-      title: 'Image Recognition App',
-      description: 'Mobile application that uses machine learning to identify objects in real-time using the device camera.',
-      tags: ['React Native', 'TensorFlow.js', 'Mobile'],
-      category: 'mobile',
-      image: 'https://via.placeholder.com/400x250/2d3748/ffffff?text=Image+Recognition+App',
+      title: 'Warehouse Management System UI',
+      description: 'A Warehouse Management System UI Design',
+      tags: ['React', 'Express', 'MongoDB', 'Stripe'],
+      category: 'web',
+      image: 'https://via.placeholder.com/400x250/2d3748/ffffff?text=E-commerce+Platform',
       github: '#',
       demo: '#'
     },
@@ -56,23 +56,12 @@ const Projects = forwardRef((props, ref) => {
       github: '#',
       demo: '#'
     },
-    {
-      id: 6,
-      title: 'Fitness Tracker App',
-      description: 'Mobile application for tracking workouts, nutrition, and fitness goals with data visualization.',
-      tags: ['React Native', 'GraphQL', 'MongoDB', 'Node.js'],
-      category: 'mobile',
-      image: 'https://via.placeholder.com/400x250/2d3748/ffffff?text=Fitness+Tracker',
-      github: '#',
-      demo: '#'
-    }
   ];
 
   const categories = [
     { id: 'all', name: 'All Projects' },
     { id: 'web', name: 'Web Development' },
     { id: 'ai', name: 'AI/ML' },
-    { id: 'mobile', name: 'Mobile Apps' }
   ];
 
   const filteredProjects = filter === 'all' 

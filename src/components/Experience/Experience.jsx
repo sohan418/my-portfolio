@@ -3,59 +3,51 @@ import { FaBriefcase, FaGraduationCap, FaCode, FaLaptopCode } from 'react-icons/
 import './Experience.css';
 
 const Experience = forwardRef((props, ref) => {
-  const experiences = [
+  const experiences =  [
+    // Work Experience
     {
       id: 1,
-      title: 'Senior Software Engineer',
-      company: 'Tech Innovations Inc.',
-      period: '2022 - Present',
+      title: 'Python Full Stack Developer',
+      company: 'Actecal Pvt. Ltd',
+      period: 'Feb 2023 - Present',
       description: [
-        'Led a team of 5 developers to build a scalable microservices architecture using Node.js and React',
-        'Implemented CI/CD pipelines reducing deployment time by 40%',
-        'Mentored junior developers and conducted code reviews'
+        'Automated 100+ Excel-based reports using Python, Pandas, and NumPy, reducing manual work and improving reporting accuracy and speed by 60%',
+        'Developed a web-based MIS dashboard for real-time insights after data uploads',
+        'Led AI voice analytics integration using AWS Bedrock, improving call audit efficiency by 40%',
+        'Built Python tools for automated invoice generation, streamlining financial operations',
+        'Worked closely with backend, frontend, and data teams to ensure smooth project delivery',
+        'Collaborated with cross-functional teams to integrate backend APIs, frontend UIs, and data pipelines',
+        'Utilized AWS services like S3, Lambda, SQS, and Transcribe for scalable, cloud-based solutions'
       ],
       icon: <FaBriefcase />,
       type: 'work'
     },
     {
       id: 2,
-      title: 'Software Engineer',
-      company: 'Digital Solutions Ltd.',
-      period: '2019 - 2022',
+      title: 'Internship',
+      company: 'Actecal Pvt. Ltd',
+      period: 'Feb 2023 - July-2023 (6 months)',
       description: [
-        'Developed and maintained web applications using React and Python',
-        'Optimized database queries improving application performance by 30%',
-        'Collaborated with cross-functional teams to deliver features on schedule'
+        'Learned the basics of Python and applied them in real-world company projects',
+        'Gained hands-on experience in debugging and troubleshooting application issues',
+        'Explored frontend development using HTML, CSS, JavaScript, and React.js',
+        'Worked with MySQL and MongoDB for backend data handling',
+        'Collaborated on live projects, understanding full-stack workflows and team coordination'
       ],
       icon: <FaBriefcase />,
       type: 'work'
     },
     {
-      id: 3,
-      title: 'Master of Computer Science',
-      company: 'Stanford University',
-      period: '2017 - 2019',
+      id: 4,
+      title: 'Diploma in Computer Science',
+      company: 'Government Polytechnic Lohaghat',
+      period: '',
       description: [
-        'Specialized in Artificial Intelligence and Machine Learning',
-        'Thesis on "Advanced Neural Network Architectures for Natural Language Processing"',
-        'Graduated with Distinction'
+        'Grade – 85%'
       ],
       icon: <FaGraduationCap />,
       type: 'education'
     },
-    {
-      id: 4,
-      title: 'Bachelor of Technology in Computer Science',
-      company: 'Indian Institute of Technology',
-      period: '2013 - 2017',
-      description: [
-        'Focus on Software Engineering and Data Structures',
-        'President of Coding Club',
-        'Graduated with First Class Honors'
-      ],
-      icon: <FaGraduationCap />,
-      type: 'education'
-    }
   ];
 
   return (
