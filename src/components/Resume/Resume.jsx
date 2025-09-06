@@ -4,7 +4,7 @@ import './Resume.css';
 
 const Resume = forwardRef((props, ref) => {
   // Replace with your actual resume file path in the public folder
-  const resumePdf = "src/components/Resume/resume.pdf";
+  const resumePdf = "/resume.pdf";
   
   const skills = [
     {
